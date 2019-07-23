@@ -1,11 +1,11 @@
 # JayStatsWeather
-Fitbit Colck Face- Stats, Weather, Location
+Fitbit Clock Face with - Time, Stats, Heart Rate,  Weather, Location
 
 Clock face based on cmspooner ForecastTime.
 
 # Main face
 ![MAIN FACE](/images/JayStatsWeather.png)
->Displays Time,Heart Rate, Steps/goal/progress, Date, Weather/temp/location
+>Displays Time, Heart Rate/resting/zone, Steps/goal/progress, Date, Weather/temp/location
 
 # Stats face
 ![STATS FACE](/images/JayStatsWeather2.png)
