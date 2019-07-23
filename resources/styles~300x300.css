@@ -1,0 +1,140 @@
+.background {
+  viewport-fill: black;
+}
+
+#clickbg {
+  width: 100%;
+  height: 100%;
+  fill: black;
+  opacity: 0
+}
+
+/* Clock View Labels */
+#dateLabel {
+  font-size: 32;
+  font-family: Colfax-Bold;
+  text-length: 50;
+  text-anchor: start;
+  x: 5;
+  y: 30;
+  fill: white;
+}
+
+#batteryLevelLabel {
+  font-size: 21;
+  font-family: Colfax-Bold;
+  text-length: 4;
+  text-anchor: center;
+  x: 246;
+  y: 29;
+  fill: white;
+}
+
+
+#seperatorLine {
+  stroke-width: 7;
+  fill: deepskyblue;
+}
+
+#seperatorEndLeft{
+  r:3;
+  fill: deepskyblue;
+}
+#seperatorEndRight{
+  r:3;
+  fill: deepskyblue;
+}
+
+#clockLabel {
+  font-size: 70;
+  font-family: Colfax-Medium;
+  text-length: 32;
+  text-anchor: middle;
+  x: 50%;
+  y: 36%;
+  fill: white;
+}
+
+.data {
+  font-size: 27;
+  font-family: Colfax-Regular;
+  text-anchor: start;
+  text-length: 33;
+  x: 33%;
+  fill: white;
+}
+
+
+/* Stats View Labels */
+.stats {
+  font-size: 30;
+  font-family: Colfax-Medium;
+  text-anchor: start;
+  text-length: 32;
+  x: 25;
+  fill: white;
+}
+.goal {
+  font-size: 26;
+  font-family: Colfax-Regular;
+  text-anchor: middle;
+  text-length: 32;
+  x: 50%;
+  fill: white;
+}
+
+/* Forcast Labels */
+.forecastDate {
+  font-size: 28;
+  font-family: Colfax-Bold;
+  text-length: 50;
+  text-anchor: start;
+  x: 50;
+  fill: white;
+}
+
+.forecastDescription {
+  font-size: 26;
+  font-family: Colfax-Medium;
+  text-length: 50;
+  text-anchor: start;
+  x: 75;
+  fill: white;
+}
+
+.forecastHigh {
+  font-size: 24;
+  font-family: Colfax-Bold;
+  text-length: 50;
+  text-anchor: start;
+  x: 75;
+  fill: tomato;
+}
+
+
+.forecastHighVal {
+  font-size: 24;
+  font-family: Colfax-Bold;
+  text-length: 50;
+  text-anchor: start;
+  x: 135;
+  fill: tomato;
+}
+
+.forecastLow {
+  font-size: 24;
+  font-family: Colfax-Bold;
+  text-length: 50;
+  text-anchor: start;
+  x: 183;
+  fill: cornflowerblue;
+}
+
+.forecastLowVal{
+  font-size: 24;
+  font-family: Colfax-Bold;
+  text-length: 50;
+  text-anchor: start;
+  x: 246;
+  fill: cornflowerblue;
+}
