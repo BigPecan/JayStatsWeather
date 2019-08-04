@@ -4,11 +4,11 @@ Fitbit Clock Face with - Time, Stats, Heart Rate,  Weather, Location
 Clock face based on cmspooner ForecastTime.
 
 # Main face
-![MAIN FACE](/images/JayStatsWeather.png)
+![MAIN FACE](/images/clockScreen.png)
 >Displays Time, Heart Rate/resting/zone, Steps/goal/progress, Date, Weather/temp/location
 
 # Stats face
-![STATS FACE](/images/JayStatsWeather2.png)
+![STATS FACE](/images/statsScreen.png)
 >Displays all stats and progress
 
 # Forecast face
