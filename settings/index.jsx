@@ -58,26 +58,36 @@ function mySettings(props) {
   ];  
   return (
     <Page>
+      <Section title="Localisation">
+        <Select 
+          label="Distance Unit (forces to Miles or Kilometers)"
+          settingsKey="distanceUnit" 
+          options={[ 
+            {value:" ", name:"None"}, 
+            {value:"m", name:"meters"}, 
+            {value:"km", name:"kilometers"}, 
+            {value:"us", name:"feet"}, 
+            {value:"us", name:"miles"} 
+          ]} 
+        />
+      </Section>
       <Section
         title={<Text bold align="center">TimeDateWeather Settings</Text>}>
-        <Select
-          label={`Celsius / Fahrenheit`}
-          settingsKey="CelsiusOrFahrenheit"
-          options={[
-            {name:"Celsius"},
-            {name:"Fahrenheit"}
-          ]}
-        />
         <TextInput
           label="Open Weather Map API key"
           settingsKey="owm_apikey"
           placeholder="<default>"
         />
+        <Button
+          list
+          label="Reset Weather"
+          onClick={() => props.settingsStorage.setItem('weather', 'kill')}
+        />
       </Section>
       <Section
-        title={<Text bold align="center">{strings["Heading & Time"]}</Text>}>
+        title={<Text bold align="center">Heading and Time</Text>}>
         <Select
-          label={strings["Date Format"]}
+          label="Date Format"
           settingsKey="dateFormat"
           options={[
             {name: strings["Wed, Jan 31"]},
@@ -91,75 +101,52 @@ function mySettings(props) {
             {name: "31. 1. 2018"},
             {name: "31.01.2018"},
           ]}
-          />
+        />
         <Toggle
            settingsKey="batteryToggle"
-           label={strings["Battery Bar"]}
+           label="Change Battery Bar to Battery %"
          />
         <Toggle
            settingsKey="24hToggle"
-           label={strings["Force 24 Hour Time"]}
+           label="Force 24 Hour Time"
          />
         <Select
-          label={strings["Time Format"]}
+          label="Time Format"
           settingsKey="timeFormat"
           options={[
-            {name: strings["12:00 am (only 12 hour time)"]},
+            {name: "12:00 am (only 12 hour time)"},
             {name: "12:00"},
             {name: "12:00:00"}
           ]}
-          />
+        />
       </Section>
       <Section
-        title={<Text bold align="center">Separator Bar</Text>}>
-        <Select
-          label={strings["Image"]}
-          settingsKey="seperatorImage"
-          options={[
-            {name:strings["None"]},
-            {name:strings["Rainbow"]},
-            {name:strings["Wood 1"]},
-            {name:strings["Wood 2"]},
-            {name:strings["Candy Cane 1"]},
-            {name:strings["Candy Cane 2"]},
-          ]}
-         />
-        <Select
-          label={strings["Effect"]}
-          settingsKey="seperatorEffect"
-          options={[
-            {name:strings["None"]},
-            {name:strings["Glass"]},
-          ]}
-         />
-      </Section>
-      <Section
-        title="Select a Separator Bar Color">
+        title={<Text bold align="left">Select a Separator Bar color</Text>}>
         <ColorSelect
           settingsKey="color"
           colors={colourSet} />
       </Section>
       <Section
-        title="Select a Time Color">
+        title={<Text bold align="left">Select a Time Color</Text>}>
         <ColorSelect
           settingsKey="timeColour"
           colors={colourSet} />
       </Section>
       <Section
-        title="Select a Date Color">
+        title={<Text bold align="left">Select a Date Color</Text>}>
         <ColorSelect
           settingsKey="dateColour"
           colors={colourSet} />
       </Section>
       <Section
-        title={<Text bold align="center">{strings["Custom Range Colors"]}</Text>}>
+        title={<Text bold align="center">Custom Range Colors</Text>}>
         <Text>
           {strings["Low Color"]}
         </Text>
         <ColorSelect
           settingsKey="lowColor"
           colors={[
-            {color: "white"},
+            {color: "khaki"},
             {color: "coral"},
             {color: "tomato"},
             {color: "firebrick"}
@@ -171,7 +158,7 @@ function mySettings(props) {
         <ColorSelect
           settingsKey="medColor"
           colors={[
-            {color: "white"},
+            {color: "palegoldenrod"},
             {color: "yellow"},
             {color: "#FFCC33"},
             {color: "gold"},
@@ -183,7 +170,7 @@ function mySettings(props) {
         <ColorSelect
           settingsKey="highColor"
           colors={[
-            {color: "white"},
+            {color: "#00FFFF"},
             {color: "cyan"},
             {color: "#14D3F5"},
             {color: "dodgerblue"},
@@ -195,7 +182,7 @@ function mySettings(props) {
         <ColorSelect
           settingsKey="comColor"
           colors={[
-            {color: "white"},
+            {color: "cornsilk"},
             {color: "lawngreen"},
             {color: "#5BE37D"},
             {color: "forestgreen"},
@@ -203,29 +190,25 @@ function mySettings(props) {
         />
       </Section>
       <Section
-        title={<Text bold align="center">{strings["Activities"]}</Text>}>
+        title={<Text bold align="center">Activities</Text>}>
         <Toggle
-           settingsKey="rhrToggle"
+           settingsKey="heartRateRestingVis"
            label={strings["rhr"] }
          />
+        <Toggle
+           settingsKey="isHeartbeatAnimation"
+           label="Heartbeat animation"
+        />
       </Section>
       <Section
-        title={<Text bold align="center">{strings["Weather"]}</Text>}>
+        title={<Text bold align="center">Weather</Text>}>
         <Toggle
            settingsKey="unitToggle"
            label={strings["Celsius"]}
            onChange={value => props.settingsStorage.setItem('unit', value.toString())}
          />
-        <Toggle
-           settingsKey="weatherScrollToggle"
-           label={strings["weather scrolling"]}
-         />
-         <Toggle
-           settingsKey="locationScrollToggle"
-           label={strings["location scrolling"]}
-         />
         <Select
-          label={strings["Weather Update Interval"]}
+          label="Weather Update Interval"
           settingsKey="updateInterval"
           options={[
             {name:strings["5 minutes"], value:5},
@@ -239,7 +222,7 @@ function mySettings(props) {
           {strings["WATCH battery"]}
         </Text>
         <Select
-          label={strings["Location Update Interval"]}
+          label="Location Update Interval"
           settingsKey="locationUpdateInterval"
           options={[
             {name:strings["5 minutes"], value:5},
@@ -263,30 +246,6 @@ function mySettings(props) {
       </Section>
       <Section
         title={<Text bold align="center">Contact Me</Text>}>
-        <Text>
-          {strings["Contact Me"]}
-        </Text>
-        <Link source="https://rawgit.com/cmspooner/Kearsarge-Time-for-Fitbit-Ionic/master/settings/email.html">
-          <TextImageRow
-            label={strings["Email"]}
-            sublabel="cmspooner@gmail.com"
-            icon="https://github.com/cmspooner/ForecastTime/blob/master/resources/icons/settings/Email.png?raw=true"
-          />
-        </Link>
-        <Link source="https://github.com/cmspooner">
-          <TextImageRow
-            label="Github"
-            sublabel="https://github.com/cmspooner"
-            icon="https://github.com/cmspooner/ForecastTime/blob/master/resources/icons/settings/Github.png?raw=true"
-          />
-        </Link>
-        <Link source="https://paypal.me/CMSpooner">
-          <TextImageRow
-            label="PayPal"
-            sublabel="cmspooner@gmail.com"
-            icon="https://github.com/cmspooner/ForecastTime/blob/master/resources/icons/settings/Paypal.png?raw=true"
-          />
-        </Link>
         <Link source="https://openweathermap.org">
           <TextImageRow
             label="OpenWeatherMap"
@@ -296,7 +255,40 @@ function mySettings(props) {
         </Link>
       </Section>
       <Section
-        title={<Text bold align="center">{strings["Build Version"]}</Text>}>
+        title={<Text bold align="center">Build Version and English Only Notes</Text>}>
+        <Text>
+          1.0.1.8 Corrected issue with heartrate and weather text not displaying correctly.
+        </Text>
+        <Text>
+          1.0.1.7 Added arc to main screen instead of line for progress.
+        </Text>
+        <Text>
+          1.0.1.6 Adjustments to screens and code fixes.
+        </Text>
+        <Text>
+          1.0.1.5 Corrected bug with Stats distance Units.
+        </Text>
+        <Text>
+          1.0.1.4 Corrected bug with Stats distance display.
+        </Text>
+        <Text>
+          1.0.1.3 Updated Stats page font and wording.
+        </Text>
+        <Text>
+          1.0.1.2 Added end points to status lines. Consolidating and cleaning code.
+        </Text>
+        <Text>
+          1.0.1.1 Removed weather scrolling.
+        </Text>
+        <Text>
+          1.0.1.0 Font adjustment to stats.
+        </Text>
+        <Text>
+          1.0.0.9 Added progress bars to stats page.
+        </Text>
+        <Text>
+          1.0.0.8 Font adjustments and some code changes to stats.
+        </Text>
         <Text>
           1.0.0.7 Code clean-up and a little bit of spacing adjustment.
         </Text>
@@ -332,17 +324,13 @@ function mySettings(props) {
         </Text>
       </Section>
       <Section
-        title={<Text bold align="center">{strings["Reset Data"]}</Text>}>
+        title={<Text bold align="center">Reset Data</Text>}>
         <Button
           list
           label="Reset Settings"
           onClick={() => props.settingsStorage.setItem('settings', 'kill')}
         />
-        <Button
-          list
-          label="Reset Weather"
-          onClick={() => props.settingsStorage.setItem('weather', 'kill')}
-        />
+
       </Section>
     </Page>
   );

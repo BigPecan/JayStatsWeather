@@ -2,25 +2,26 @@
   "fitbit": {
     "appUUID": "960ecd12-d1fb-4ed7-861e-41a000f276e8",
     "appType": "clockface",
-    "appDisplayName": "JayStatsWeather",
+    "appDisplayName": "JayAllTheStuff",
     "iconFile": "resources/icon.png",
     "wipeColor": "",
     "requestedPermissions": [
-      "access_activity",
-      "access_user_profile",
-      "access_heart_rate",
-      "access_location",
-      "access_internet",
+      "access_exercise",
       "run_background",
-      "access_exercise"
+      "access_internet",
+      "access_location",
+      "access_heart_rate",
+      "access_user_profile",
+      "access_activity"
     ],
     "buildTargets": [
       "higgs",
-      "meson"
+      "meson",
+      "gemini"
     ],
     "i18n": {
       "en": {
-        "name": "JayStatsWeather"
+        "name": "JayAllTheStuff"
       }
     },
     "defaultLanguage": "en-US"

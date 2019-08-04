@@ -105,10 +105,8 @@ export function expandDay(day){
   return days[days.indexOf(day)+7];
 }
 
-export function goalToColor(value, total, low = 'tomato', 
-                                          medium = 'fb-peach', 
-                                          high = 'fb-cyan', 
-                                          complete = 'fb-mint', ){
+export function goalToColor(value, total, low = 'tomato', medium = 'fb-peach', high = 'fb-cyan', complete = 'fb-mint', ){
+  
   if (!value || !total){
     color = low;
     return color;
@@ -268,4 +266,34 @@ export function getForecastIcon(code, description, isDay){
         return "../resources/icons/weather/whiteMoon.png"
       break;
   }
+}
+
+export function timeFormat(format, clockLabel){
+  switch (format) {
+    case 1:
+      clockLabel.textAnchor = "middle";
+      clockLabel.x = device.screen.width/2
+      clockLabel.text = `${hours}:${mins}`;
+      break;
+    case 2:
+      clockLabel.textAnchor = "start";
+      clockLabel.x = 10
+      clockLabel.text = `${hours}:${mins}:${secs}`;
+      break;
+    default:
+      clockLabel.textAnchor = "middle";
+      clockLabel.x = device.screen.width/2
+      clockLabel.text = `${hours}:${mins}${ampm}`;
+      break;
+  }   
+}
+
+export function getGoalArc(goalProgress, goalEnd)
+{
+  if (goalProgress == undefined)
+    return 0;
+  else if (goalProgress >= goalEnd)
+    return 360;
+  else
+    return 360 * (goalProgress/goalEnd);
 }

@@ -12,10 +12,14 @@ import { locale } from "user-settings";
 //let myLocale = locale.language.substring(0,2);
 let myLocale = "en"
 settingsStorage.setItem('locale', myLocale)
+settingsStorage.setItem('heartRateRestingVis', 'true');
+settingsStorage.setItem('isHeartbeatAnimation', 'true');
 
 console.log("Companion locale: " + settingsStorage.getItem('locale'));
 
 import Weather from '../common/weather/phone';
+// get api key
+var key = settingsStorage.getItem("userAPIKey");
 let weather = new Weather();
 
 console.log("Companion Started");
@@ -23,6 +27,7 @@ console.log("Companion Started");
 weather.setProvider("owm"); // only support owm for now
 
 // Message socket opens
+
 messaging.peerSocket.onopen = () => {
   console.log("Companion Socket Open");
   restoreSettings();

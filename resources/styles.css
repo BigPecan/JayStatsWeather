@@ -11,12 +11,12 @@
 
 /* Clock View Labels */
 #dateLabel {
-  font-size: 25;
+  font-size: 32;
   font-family: Colfax-Medium;
   text-length: 50;
   text-anchor: start;
   x: 15;
-  y: 24;
+  y: 25;
   fill: white;
 }
 
@@ -54,49 +54,31 @@
   fill: white;
 }
 
-.data {
-  font-size: 25;
-  font-family: Colfax-Regular;
-  text-anchor: start;
-  text-length: 33;
-  x: 37%;
-  fill: white;
-}
-
-/* Stats View Labels */
-.stats {
-  font-size: 30;
-  font-family: Colfax-Medium;
-  text-anchor: start;
-  text-length: 32;
-  x: 25;
-  fill: white;
-}
 /* Heart Rate */
 #hr {
-  transform: translate(3%,32)
+  transform: translate(2%,31)
 }
 
 #hr-count {
   text-anchor: start;
   text-length: 50;
-  font-size: 26;
+  font-size: 32;
   font-family: Seville-Bold-Condensed;
-  fill: white;
-  x: 42;
-  y: 22;
+/*  fill: cornflowerblue; */
+  x: 76;
+  y: 18;
 }
-/*
+
 #hr-resting {
   text-anchor: start;
   text-length: 6;
   font-size: 18;
   font-family: Seville-Bold-Condensed;
-  fill: #969696;
-  x: 43;
+/*  fill: #969696; */
+  x: 38;
   y: 15;
 }
-
+/*
 #hr-zone {
   text-anchor: start;
   text-length: 15;
@@ -178,30 +160,108 @@
   fill: cornflowerblue;
 }
 
-#steps {
-  transform: translate(63,149);  
-}
-
 #tempLabel {
-  font-size: 25;
+  font-size: 32;
   font-family: Colfax-Bold;
   text-length: 50;
   text-anchor: start;
   x: 75;
-  fill: cornflowerblue;
+  fill: cornflowerblue; 
 }
 
 #conditionLabel {
-  font-size: 25;
+  font-size: 32;
   font-family: Colfax-Bold;
   text-length: 50;
   text-anchor: start;
-  x: 125;
+  x: 130;
   fill: fb-orange;
 }
+/*
+#steps {
+  transform: translate(47,149);  
+}
+*/
+#stepStats {
+  transform: translate(3%,3%);  
+}
 
+#distStats {
+  transform: translate(3%,0%);
+}
+
+#floorsStats  {
+  transform: translate(3%,0%);
+}
+
+#activeStats {
+  transform: translate(3%,0%);
+}
+
+#calsStats  {
+  transform: translate(3%,0%);
+}
+/*
 #steps {  
   fill: gold;
+}
+*/
+#stepsArc {
+  x: 37;
+  y: 143;
+  height: 36;
+  width: 36;
+  fill: fb-green;
+  arc-width: 3;
+  start-angle: 0;
+  sweep-angle: 0;
+}
+/*
+.tgt-no {
+  cx: 74%+5;
+  cy: 29;
+  r: 4;
+}
+
+.tgt-yes {
+  cx: 74%+5;
+  cy: 29;
+  r: 8; 
+  display: none;
+}
+*/
+.stats-tgt-no {
+  cx: 89%+5;  
+  cy: 15%;  
+  r: 4;
+  fill: red;
+}
+
+.stats-tgt-yes {
+  cx: 89%+5; 
+  cy: 15%;
+  r: 8; 
+  display: none;
+  fill: red;
+}
+
+.data {
+  font-size: 25;
+  font-family: Colfax-Regular;
+  text-anchor: start;
+  text-length: 33;
+  x: 37%;
+  fill: white;
+}
+
+/* Stats View Labels */
+.stats {
+  font-size: 26;
+  font-family: Colfax-Medium;
+  text-anchor: start;
+  text-length: 32;
+  x: 25;
+  fill: white;
 }
 
 .progress {
@@ -211,17 +271,24 @@
   width: 10;
  /* fill: red;*/
 }
-
+/*
 .bg {
   x:6;
-  y:30;
+  y:29;
   height: 1;
-  width: 65%-24;
+  width: 80%-24;
+  /*fill: red;*/
+}
+*/
+.statsBg {
+  x:0;
+  y:0;
+  height: 1;
   /*fill: red;*/
 }
 
 .count {
-  font-size: 25;
+  font-size: 30;
   x: 26;
   y: 22;
   text-length: 50; 

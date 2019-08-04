@@ -150,6 +150,7 @@ export function getStrings(lang, type){
             "moderate rain"           : "Rain",
             "Rain"                    : "Rain",
             "Mostly Sunny"            : "Sunny",
+            "thunderstorm with heavy rain" : "T-Storm",
             
             "Town and Country Mobile Village" : "Interlochen"
             

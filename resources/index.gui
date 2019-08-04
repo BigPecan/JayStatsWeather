@@ -7,21 +7,19 @@
     <circle id = "seperatorEndLeft"cx="5%" cy="38" />
     <line id = "seperatorLine" x1="5%" y1="37" x2="95%" y2="37"/>
     <circle id = "seperatorEndRight"cx="95%" cy="38" />
-    <image id="seperatorLineImage" x="13" y="33" width="321" height="10" href="" load="sync"/>
-    <image id="seperatorLineEffect" x="11" y="33" width="321" height="12" href="" load="sync"/>
+<!---    <image id="seperatorLineImage" x="13" y="33" width="321" height="10" href="" load="sync"/>
+    <image id="seperatorLineEffect" x="11" y="33" width="321" height="12" href="" load="sync"/>--->
     <text id="clockLabel" />
-    <!---<image x="30%" y="49%" width="18" height="18" href="icons/21/heart.png" load="sync"/>
-    <text id="hrLabel" class="data" y="56%"/>
-    <image x="30%" y="61%" width="18" height="18" href="icons/21/steps.png" load="sync"/>--->
-    <section id="hr" x="45" y="47%" width="15" height="15"> 
-      <text id="hr-count" class="data" />
+    <section id="hr" x="35" y="47%" width="15" height="15"> 
+      <text id="hr-count" class="data" x="76"/>
       <image id="hr-icon-systole" class="icon" href="icons/heart/stat_hr_solid_48px.png" />
       <image id="hr-icon-diastole" class="icon" href="icons/heart/hr_solid.png" />
       <section>
         <text id="hr-resting" class="data" />
-         <text id="hr-zone" class="data" />
+<!---         <text id="hr-zone" class="data" />   --->
       </section>
     </section> 
+<!---
     <g id="steps">
       <rect class="bg"/>  
       <circle class="tgt-no"/>  
@@ -30,32 +28,69 @@
       <text class="count">777</text>
       <image class="icon" href="icons/21/steps.png" />
     </g>
-    <text id="stepsLabel" class="data" y="68%"/>
-    <image id="weatherImage" x="10" y="73%" width="60" height="60" href="" load="sync"/>
-<!---
-    <use id="tempAndConditionLabel" href='#marquee-text' value="50" font-size='25' font-family="Colfax-Bold" 
-          width='70%' height='16%' x="75" y ="72%" fill='white'>
-       <set href='group/text' attributeName='text-buffer' />
-    </use>
 --->
+    <text id="stepsLabel" class="data" x="77" y="168"/>
+    <image id="stepsImage" x="44" y="150" width="21" height="21" href="icons/21/steps.png" load="sync"/>
+    <arc id="stepsArc"/>
+    <image id="weatherImage" x="10" y="73%" width="58" height="58" href="" load="sync"/>
     <text id="tempLabel" class="data" y="85%" font-size='25' font-family="Colfax-Bold"/>
-    <text id="conditionLabel" class="data" y="85%" font-size='25' font-family="Colfax-Regular"/>
-    <use id="weatherLocationLabel" href='#marquee-text' value="50" font-size='25' font-family="Colfax-Regular" 
-          width='70%' height='15%' x="77" y ="85%" fill='fb-pink'>
+    <text id="conditionLabel" class="data" y="85%" font-size='25' font-family="Colfax-Medium"/>
+    <use id="weatherLocationLabel" href='#marquee-text' value="50" font-size='25' font-family="Colfax-Medium" 
+          width='70%' height='15%' x="79" y ="85%" fill='fb-pink'>
        <set href='group/text' attributeName='text-buffer' />
     </use>
   </svg>
   <svg id="stats" display="none">
-    <image id="stepsStatsImage" x="0" y="4%" width="21" height="21" href="icons/21/steps.png" load="sync"/>
-    <text id="stepStatsLabel" class="stats" y="12%"/>
-    <image x="0" y="24%" width="21" height="21" href="icons/21/distance.png" load="sync"/>
-    <text id="distStatsLabel" class="stats" y="32%"/>
-    <image x="0" y="44%" width="21" height="21" href="icons/21/stairs.png" load="sync"/>
-    <text id="floorsStatsLabel" class="stats" y="52%"/>
-    <image x="0" y="64%" width="21" height="21" href="icons/21/watch.png" load="sync"/>
-    <text id="activeStatsLabel" class="stats" y="72%"/>
-    <image x="0" y="84%" width="21" height="21" href="icons/21/calories.png" load="sync"/>
-    <text id="calsStatsLabel" class="stats" y="92%"/>
+    < g id="stepStats">
+      <circle class="stats-tgt-no"/>  
+      <circle class="stats-tgt-yes"/>  
+      <image id="stepStats-image" class="icon" x="0" y="4%" width="21" height="21" href="icons/21/steps.png" load="sync"/>
+      <text id="stepStats-label" class="stats" y="12%"/>  
+      <rect id="stepStats-line-back" x="0" y="15%" width="90%" height="1" fill="#969696" />
+      <rect id="stepStats-line" x="0" y="14%" width="90%" height="5" fill="orangered" />
+    </g>
+    < g id="distStats">
+      <circle class="stats-tgt-no" cy="35%"/>  
+      <circle class="stats-tgt-yes" cy="35%"/>  
+      <image id="distStats-image" x="0" y="24%" class="icon" width="21" height="21" href="icons/21/distance.png" load="sync"/> 
+      <text id="distStats-label" class="stats" y="32%"/>  
+      <rect id="distStats-line-back" x="0" y="35%" width="90%" height="1" fill="#969696" />
+      <rect id="distStats-line" x="0" y="34%" width="90%" height="5" fill="orangered" />
+    </g>
+
+    < g id="floorsStats">
+      <circle class="stats-tgt-no" cy="55%"/>  
+      <circle class="stats-tgt-yes" cy="55%"/>  
+      <image id="floorsStats-image" x="0" y="44%" class="icon" width="21" height="21" href="icons/21/stairs.png" load="sync"/> 
+      <text id="floorsStats-label" class="stats" y="52%"/>  
+      <rect id="floorsStats-line-back" x="0" y="55%" width="90%" height="1" fill="#969696" />
+      <rect id="floorsStats-line" x="0" y="54%" width="90%" height="5" fill="orangered" />
+    </g>
+
+    <!---<image x="0" y="64%" width="21" height="21" href="icons/21/watch.png" load="sync"/>
+    <text id="activeStatsLabel" class="stats" y="72%"/>--->
+    < g id="activeStats">
+      <circle class="stats-tgt-no" cy="75%"/>  
+      <circle class="stats-tgt-yes" cy="75%"/>  
+      <rect class="statsBg"/>
+      <image id="activeStats-image" x="0" y="64%" class="icon" width="21" height="21" href="icons/21/watch.png" load="sync"/> 
+      <text id="activeStats-label" class="stats" y="72%"/>  
+      <rect id="activeStats-line-back" x="0" y="75%" width="90%" height="1" fill="#969696" />
+      <rect id="activeStats-line" x="0" y="74%" width="90%" height="5" fill="orangered" />
+    </g>
+
+    <!---<image x="0" y="84%" width="21" height="21" href="icons/21/calories.png" load="sync"/>
+    <text id="calsStatsLabel" class="stats" y="92%"/>--->
+    < g id="calsStats">
+      <circle class="stats-tgt-no" cy="95%"/>  
+      <circle class="stats-tgt-yes" cy="95%"/>  
+      <rect class="statsBg"/>
+      <image id="calsStats-image" x="0" y="84%" class="icon" width="21" height="21" href="icons/21/calories.png" load="sync"/> 
+      <text id="calsStats-label" class="stats" y="92%"/>  
+      <rect id="calsStats-line-back" x="0" y="95%" width="90%" height="1" fill="#969696" />
+      <rect id="calsStats-line" x="0" y="94%" width="90%" height="5" fill="orangered" />
+    </g>
+     
   </svg>
   <svg id="forecast" display="none">
     <text id="todayDateLabel" class="forecastDate" y="22"/>
